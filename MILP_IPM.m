@@ -212,9 +212,9 @@ for t = 1:T
     F = [F,P_it(:,t)'*B*P_it(:,t) - PL(t) == 0];%损耗约束
     F = [F,sin(fi.*(P_it(:,t)-Pimin)) + u(:,t) - v(:,t) == 0];%等式(19)
     F = [F,s(:,t) == u(:,t) + v(:,t)];%等式(18) 
-    constraint = [constraint,SRit(:,t) <= Pimax - Pit(:,t)];%热备用约束（7）式
-    constraint = [constraint,SRit(:,t) <= y * UR];%热备用约束(7)式
-    constraint = [constraint,sum(SRit(:,t)) >= z*Dt(t)];%热备用约束（8）式
+%     constraint = [constraint,SRit(:,t) <= Pimax - Pit(:,t)];%热备用约束（7）式
+%     constraint = [constraint,SRit(:,t) <= y * UR];%热备用约束(7)式
+%     constraint = [constraint,sum(SRit(:,t)) >= z*Dt(t)];%热备用约束（8）式
 end
 F = [F,P_it >= 0,s >= 0,PL >= 0,u >= 0,v >= 0];
 f = 0;
